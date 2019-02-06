@@ -40,18 +40,18 @@ try {
 
     $stmt = $dbh->prepare("INSERT INTO Payup_Users (ID, First_Name, Last_Name, Password, Net_Worth, Username)
 VALUES (null, :firstname, :lastname, :pwd, '0 ',:username)");
-    $stmt->bindParam(':firstname', $firstname);
-    $stmt->bindParam(':pwd', $pwd);
-    $stmt->bindParam(':lastname', $lastname);
-    $stmt->bindParam(':username', $email);
+    $stmt->bindParam(':firstname', $_POST['Firstname']);
+    $stmt->bindParam(':pwd', password_hash($_POST["password"], PASSWORD_DEFAULT));
+    $stmt->bindParam(':lastname', $_POST['Lastname']);
+    $stmt->bindParam(':username', $_POST['username']);
 // // null, : firstname, : lastname, : password, NULL, : username "
 
     echo ('hi from line 49');
-    // insert a row
-    $firstname = "John";
-    $lastname = "Doe";
-    $email = " john@example.com ";
-    $pwd = 'yes';
+    // // insert a row
+    // $firstname = "John";
+    // $lastname = "Doe";
+    // $email = " john@example.com ";
+    // $pwd = 'yes';
     $stmt->execute();
     echo ('it is done');
 
