@@ -1,22 +1,16 @@
 <?php
 include('DB.php');
-$query = "SELECT * FROM Users WHERE Username = :username AND firstname = :firstname";
-$statement = $dbh->prepare($query);
-$statement->execute(
-    array(
-        'username' => $_SESSION["username"],
-        'firstname' => $_SESSION["firstname"]
-    )
-);
-$run = $dbh->prepare($query);
-$result = $run->fetchAll();
-$_SESSION['Net_Worth'] = $result['Net_Worth'];
+
+print_r($_SESSION['info']);
+
+echo 'welcome ' + ($_SESSION['info'][0][1]); // werkt niet
+echo ($_SESSION['info'][0]['First_Name']); // werkt wel
+echo '</br>';
 
 
+echo 'you currently have ';
+echo ($_SESSION['info'][0]['Net_Worth']);
+echo '</br>';
 
-if ($_SESSION['key'] === $key) {
-    echo "welcome " + $_SESSION['firstname'];
-    echo 'you currently have ' + $_SESSION['Net_Worth'];
-}
 
 ?>

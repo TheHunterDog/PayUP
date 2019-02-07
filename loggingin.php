@@ -1,31 +1,29 @@
 <?php
+error_reporting(-1);
 include('DB.php');
 if (empty($_POST["username"]) || empty($_POST["password"])) {
     $message = '<label> all fields are requirded</label>';
     echo $message;
-
 } else {
-    $query = "SELECT * FROM Users WHERE Username = :username AND Password = :password";
-    $statement = $dbh->prepare($query);
-    $statement->execute(
-        array(
-            'username' => $_POST["username"],
-            'password' => password_hash($_POST["password"])
-        )
-    );
 
-    $result = $run->fetchAll();
-    $userfirstname = $result['firstname'];
-    $count = $statement->rowCount();
+    $stmt = $dbh->prepare("SELECT * FROM Payup_Users WHERE Username = :username");
+    $stmt->bindParam(':username', $_POST['username']);
+    $stmt->execute();
+    $person = $stmt->fetchAll();
+    $_SESSION['info'] = $person;
+
+    $count = $stmt->rowCount();
     if ($count > 0) {
-        $_SESSION['key'] = rand(0, 9999999999999999999999999999999999999);
-        echo 'good';
-        $_SESSION["username"] = $_POST["username"];
-        $_SESSION['firstname'] = $userfirstname;
-        header('location:succes.php');
+        if (password_verify($_POST['password'], $person[0]['Password'])) {
+            $_SESSION["username"] = $_POST["username"];
+            $_SESSION['firstname'] = $userfirstname;
+            header('location:loggedin.php');
+        }
     } else {
         $message = "<label> WRONG</label>";
         echo $message;
+        header('location:login.php');
+
     }
     echo $message;
 }
