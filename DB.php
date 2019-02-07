@@ -7,9 +7,9 @@ $host = 'localhost';
 
 $port = 3306;
 
-$user = 'deb7255_mark';
+$user = 'root';
 
-$pass = 'heineken';
+$pass = 'root';
 
 $db = 'deb7255_mark';
 
