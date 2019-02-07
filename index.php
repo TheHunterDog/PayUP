@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,18 +10,38 @@
     <title>PayUp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/responsiveness.css">
+    <link rel="stylesheet" href="css/telefoon.css">
+    <link rel="stylesheet" href="css/normal.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="signup.php">
-                <p>Sign Up</p>
-            </a>
-            <a href="login.php">
-                <p>Login</p>
-            </a>
+            <?php
+            if (isset($_SESSION['info'])) {
+                echo ('<a href="dashboard.php">');
+                echo ('<p>Dashboard</p>');
+                echo ('</a>');
+                echo ('<a href="logout.php">');
+                echo ('<p>logout</p>');
+                echo ('</a>');
+
+            } else {
+                echo ('<a href="signup.php">');
+                echo ('<p>Sign Up</p>');
+                echo ('</a>');
+                echo ('<a href="login.php">');
+                echo ('<p>Login</p>');
+                echo ('</a>');
+            }
+
+
+            ?>
+                
+            
+                
+           
+            
         </nav>
         <h2>PayUp</h2>
         <div id="kleur"></div>

@@ -1,8 +1,8 @@
 <?php
+session_start();
 include('DB.php');
-if (headers_sent()) {
-    echo ($message);
-    echo ('wrong credentials');
+if (isset($_SESSION['info'])) {
+    header('location:dashboard.php');
 }
 if (isset($_POST['submitbutton'])) {
     error_reporting(-1);
@@ -28,7 +28,6 @@ if (isset($_POST['submitbutton'])) {
         } else {
             $message = "<label> WRONG</label>";
             echo $message;
-            header('location:login.php');
 
         }
         echo $message;

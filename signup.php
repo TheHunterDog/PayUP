@@ -1,7 +1,12 @@
 
 <?php
+session_start();
 include('DB.php');
+
 echo ($message);
+if (isset($_SESSION['info'])) {
+    header('location:dashboard.php');
+}
 if (isset($_POST['submitbutton'])) {
 
     // if (empty($_POST['Firstname']) || empty($_POST["password"]) || empty($_POST['Lastname']) || empty($_POST['username'])) {
@@ -22,6 +27,8 @@ VALUES (null, :firstname, :lastname, :pwd, '1 ',:username)");
         $stmt->bindParam(':username', $_POST['username']);
         $stmt->execute();
         echo ('it is done');
+        // $person = $stmt->fetchAll();
+        // $_SESSION['user'] = $person;
 
         echo $message;
     }
