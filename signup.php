@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include('DB.php');
+include('Db.php');
 
 echo ($message);
 if (isset($_SESSION['info'])) {

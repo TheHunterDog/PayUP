@@ -1,6 +1,10 @@
 <?php
-include('DB.php');
+include('lib/Db.php');
+include('lib/Payment.php');
 session_start();
+$Db = new Db();
+$conn = $Db->getConntectie();
+$payment = new payment;
 
 if (!isset($_SESSION['info'])) {
     header('location:index.php');
@@ -14,35 +18,8 @@ if (!isset($_SESSION['info'])) {
 
 
 if (isset($_POST['submitbutton'])) {
-    $payernewsal = $_SESSION['info'][0]['Net_Worth'] - $_POST['howmuch'];
-    $updatepayer = $dbh->prepare("UPDATE Payup_Users SET Net_Worth = :newnetpayer WHERE ID = :id AND Username = :Username");
-    $updatepayer->bindParam(':newnetpayer', $payernewsal);
-    $updatepayer->bindParam(':Username', $_SESSION['info'][0]['Username']);
-    $updatepayer->bindParam(':id', $_SESSION['info'][0]['ID']);
-    $updatepayer->execute();
-
-    echo ('quary1');
-    $getinforeciver = $dbh->prepare("SELECT * FROM Payup_Users WHERE ID = :id");
-    $getinforeciver->bindParam(':id', $_POST['to_bankaccount']);
-    $getinforeciver->execute();
-    $getinforeciverinfo = $getinforeciver->fetchAll();
-    echo ('quary2');
-
-    $newsalreciver = $getinforeciverinfo[0]['Net_Worth'] + $_POST['howmuch'];
-    $updatereciver = $dbh->prepare("UPDATE Payup_Users SET Net_Worth = :newnetreciver WHERE ID = :id");
-    $updatereciver->bindParam(':newnetreciver', $newsalreciver);
-    $updatereciver->bindParam(':id', $getinforeciverinfo[0]['ID']);
-    $updatereciver->execute();
-
-    $history = $dbh->prepare("INSERT INTO `Payup_Transactionhistory` (`From_bankaccountID`, `To_bankaccountID`, `Value`, `why`) 
-                                                            VALUES (':from', ':to', ':value',':description');");
-    $history->bindParam(':to', $_POST['tobankaccount']);
-    $history->bindParam(':from', $_SESSION['info']['ID']);
-    $history->bindParam(':value', $_POST['howmuch']);
-    $history->bindParam(':description', $_POST['description']);
-    echo ('quary3');
-
-    echo ('end');
+    $payment->executepayment($_SESSION['info'][0]['ID'], $_POST['to_bankaccountID'], $_POST['howmuch'], $_POST['description'], $conn);
+    unset($_POST);
 }
 ?>
 <!DOCTYPE html>
@@ -58,7 +35,7 @@ if (isset($_POST['submitbutton'])) {
 
 <body>
     <form action="payment.php" method="post">
-        <input type="text" name="to_bankaccount" id="" required placeholder="5">
+        <input type="text" name="to_bankaccountID" id="" required placeholder="5">
         <input type="text" name="howmuch" id="" required placeholder="10000">
         <input type="text" name="description" id="" required placeholder="beer">
         <input type="submit" value="PayUp" name="submitbutton">
