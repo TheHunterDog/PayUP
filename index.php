@@ -25,7 +25,9 @@ session_start();
                 echo ('<a href="logout.php">');
                 echo ('<p>logout</p>');
                 echo ('</a>');
-
+                echo ('<a href="forum.php">');
+                echo ('<p> forum </p>');
+                echo ('</a>');
             } else {
                 echo ('<a href="signup.php">');
                 echo ('<p>Sign Up</p>');

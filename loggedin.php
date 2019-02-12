@@ -9,7 +9,7 @@ echo '</br>';
 
 
 echo 'you currently have ';
-echo ($_SESSION['info'][0]['Net_Worth']);
+echo ($_SESSION['info'][0]['Net_Worth'] . " euro");
 echo '</br>';
 
 
