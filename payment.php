@@ -19,7 +19,6 @@ if (!isset($_SESSION['info'])) {
 
 if (isset($_POST['submitbutton'])) {
     $payment->executepayment($_SESSION['info'][0]['ID'], $_POST['to_bankaccountID'], $_POST['howmuch'], $_POST['description'], $conn);
-    unset($_POST);
 }
 ?>
 <!DOCTYPE html>

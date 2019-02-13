@@ -1,4 +1,4 @@
-.main {
+.Forum-Whole-Wrapper {
 
     display: flex;
     flex-wrap: wrap;
@@ -8,6 +8,6 @@
 }
 
 
-.article {
+.Forum-Article {
     width: 25%;
 }

@@ -14,6 +14,7 @@ class Login
                 $_SESSION['info'] = $person;
                 // $_SESSION["username"] = $_POST["username"];
                 // $_SESSION['firstname'] = $userfirstname;
+
                 header('location:loggedin.php');
             }
         } else {
@@ -21,6 +22,10 @@ class Login
             echo $message;
         }
 
+    }
+    function logout()
+    {
+        session_destroy();
     }
 
 }
