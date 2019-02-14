@@ -1,8 +1,6 @@
 <?php
 include('layout/header.php');
-include('Lib/Db.php');
-$db = new Db();
-$conn = $db->getConntectie();
+$arr = ['test1', 'test2']
 ?>
 <h1>hello world</h1>
 <?php

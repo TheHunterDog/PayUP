@@ -1,6 +1,8 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+}
 include('lib/Db.php');
-session_start();
 // print_r($_SESSION);
 // print_r($_SESSION['info']);
 // echo $_SESSION['info'][0]['ID'];

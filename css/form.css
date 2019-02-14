@@ -10,4 +10,5 @@
 
 .Forum-Article {
     width: 25%;
+    word-break: break-word;
 }

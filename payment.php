@@ -1,7 +1,9 @@
 <?php
 include('lib/Db.php');
 include('lib/Payment.php');
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 $Db = new Db();
 $conn = $Db->getConntectie();
 $payment = new payment;
