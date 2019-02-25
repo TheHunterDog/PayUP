@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    width: 96%;
+    background-color: rgb(122, 195, 210);
+    padding: 1% 2%;
+}
+
+a {
+    margin: 0 1%;
+    text-decoration: none;
+    font-family: 'Patua One',
+        cursive;
+    font-size: 25px;
+}
+
+a:visited,
+a:hover,
+a:active {
+    color: #000;
+}
+
+.nav-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 3% 0;
+    position: absolute;
+}
+
+.hero {
+    background-image: url("../img/Afbeelding.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Oswald',
+        sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+
+}
+
+.sections-index {
+    width: 96%;
+    background-color: rgb(99, 159, 172);
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.article-sections-index {
+    background-color: rgb(111, 175, 189);
+    width: 32%;
+    margin: 0 1.5% 0 0;
+    font-size: 30px;
+    padding: 50px;
+}
+
+.footer-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgb(91, 143, 155);
+    font-family: 'Montserrat',
+        sans-serif;
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: row
+}
+
+.footer-menu a {
+    width: 127px;
+    display: flex;
+    font-family: 'Montserrat',
+        sans-serif;
+    justify-content: center;
+}
+
+.footer-menu a:nth-child(2) {
+    width: 50px;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+
+}
+
+.username-textfield,
+.password-txtfield {
+    border: none;
+    border-bottom: 3px solid #383835
+}
+
+.login-form-wrapper {
+    width: 100%;
+}
+
+.input-item {
+    height: 130px;
+    background-color: rgb(99, 159, 172);
+
+}

@@ -15,7 +15,7 @@ class Login
                 // $_SESSION["username"] = $_POST["username"];
                 // $_SESSION['firstname'] = $userfirstname;
 
-                header('location:loggedin.php');
+                header('location:dashboard.php');
             }
         } else {
             $message = "<label> WRONG</label>";

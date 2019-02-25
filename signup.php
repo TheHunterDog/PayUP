@@ -33,7 +33,7 @@ if (isset($message)) {
 }
 
 include('layout/header.php');
-include('layout/navigation.php');
+include('layout/navigation-middle.php');
 
 ?>
 

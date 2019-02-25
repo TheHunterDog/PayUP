@@ -20,26 +20,24 @@ if (isset($_POST['submitbutton'])) {
         $Login->checkiflogin($conn, $_POST['username'], $_POST['password']);
     }
 }
-?>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-
-<body>
+include('layout/header.php');
+include('layout/navigation-middle.php'); ?>
+    <div class="login-form-wrapper">
     <form action="login.php" method="post">
-        <label for="username">username</label>
-        <input type="text" name="username" id="username-txtfield" placeholder="USERNAME">
+        <div class="input-item">
+        <label for="username" >username</label>
+        <input type="text" name="username" class="username-textfield" id="username-txtfield" placeholder="USERNAME">
+        </div>
+                <div class="input-item">
+
         <label for="password">password</label>
-        <input type="text" name="password" id="password-txtfield" placeholder="password">
+        <input type="password" name="password" class="password-txtfield" id="password-txtfield" placeholder="password">
+                </div>
         <input type="submit" name="submitbutton" value="login">
     </form>
-</body>
+    </div>
+<?php
+include('layout/footer.php');
 
-</html>
+
+?>
