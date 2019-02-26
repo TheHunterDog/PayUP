@@ -7,7 +7,7 @@ class Person
         $stmt = $DBCONNECTION->prepare("SELECT * FROM Payup_Users WHERE ID = :id");
         $stmt->bindParam(':id', $ID);
         $stmt->execute();
-        return $stmt-> fetchColumn(1);
+        return $stmt->fetchAll();
     }
 }
  

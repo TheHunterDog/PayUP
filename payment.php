@@ -1,6 +1,7 @@
 <?php
-include('lib/Db.php');
-include('lib/Payment.php');
+
+include('Lib/Db.php');
+include('Lib/Payment.php');
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -10,7 +11,7 @@ $payment = new payment;
 
 if (!isset($_SESSION['info'])) {
     header('location:index.php');
-} 
+}
 // else {
 //     $stmt = $dbh->prepare("SELECT * FROM Payup_Users WHERE Username = :username");
 //     $stmt->bindParam(':username', $_POST['username']);
@@ -25,6 +26,7 @@ if (isset($_POST['submitbutton'])) {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,4 +47,4 @@ if (isset($_POST['submitbutton'])) {
 
 </body>
 
-</html>
+</html> 
