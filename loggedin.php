@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-include('lib/Db.php');
+include('Lib/Db.php');
 // print_r($_SESSION);
 // print_r($_SESSION['info']);
 // echo $_SESSION['info'][0]['ID'];
@@ -16,7 +16,3 @@ echo '</br>';
 echo 'your bank number is ';
 echo ($_SESSION['info'][0]['ID']);
 echo '</br>';
-
-
-
-?>

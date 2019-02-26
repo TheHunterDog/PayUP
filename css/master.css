@@ -36,7 +36,7 @@ a:active {
 }
 
 .hero {
-    background-image: url("../img/Afbeelding.jpeg");
+    background-image: url("../img/image1.webp");
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Oswald',
@@ -71,7 +71,7 @@ a:active {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    background-color: rgb(91, 143, 155);
+    background-color: rgb(156, 187, 206);
     font-family: 'Montserrat',
         sans-serif;
 }
@@ -87,6 +87,7 @@ a:active {
     font-family: 'Montserrat',
         sans-serif;
     justify-content: center;
+    color: rgb(0, 18, 143)
 }
 
 .footer-menu a:nth-child(2) {

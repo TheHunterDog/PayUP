@@ -3,9 +3,9 @@ if (!isset($_SESSION)) {
     session_start();
 }
 include('layout/header.php');
-include('layout/navigation-middle.php')
+include('layout/navigation-middle.php');
+echo ('your bankaccount number = ' . $_SESSION['info'][0]['ID']);
 ?>
-
 
 
 
