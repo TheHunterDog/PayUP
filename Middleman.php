@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
                     <input hidden type="text" name="succes" value="' . $success . '">
                         <input hidden type="text" name="return" value="' . $_POST['return'] . '" id=""> 
 
-        <input type="submit" value="return" name="return">
+        <input type="submit" value="return" name="returnye">
     </form>';
 }
 if (isset($_SESSION['info']) && !isset($_POST['submit'])) {

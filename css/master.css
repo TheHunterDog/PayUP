@@ -26,13 +26,56 @@ a:active {
     color: #000;
 }
 
+.nav-top-scrolled {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 15px 0;
+    position: absolute;
+    background-color: rgb(99, 159, 172);
+    transition: linear 1s;
+    position: fixed;
+
+}
+
 .nav-top {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     width: 100%;
-    padding: 3% 0;
+    padding: 15px 0;
     position: absolute;
+    border-bottom: rgb(99, 159, 172) solid 0.653px;
+    transition: linear 1s;
+}
+
+.signup-scrolled {
+    background-color: rgb(111, 175, 189);
+    border-radius: 20px;
+    padding: 15px;
+    transition: linear 1.5s;
+}
+
+.signup {
+    padding: 15px;
+    border-radius: 20px;
+
+
+}
+
+.login-scrolled {
+    background-color: rgb(111, 175, 189);
+    border-radius: 20px;
+    padding: 15px;
+    transition: linear 1.5s;
+}
+
+.login {
+    padding: 15px;
+    border-radius: 20px;
+
+
 }
 
 .hero {
@@ -42,7 +85,7 @@ a:active {
     font-family: 'Oswald',
         sans-serif;
     width: 100%;
-    height: 100vh;
+    height: 200vh;
     display: flex;
     justify-content: center;
     align-items: center;

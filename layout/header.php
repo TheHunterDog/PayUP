@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/master.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Patua+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="js/main.js"></script>
 </head>
 
-<body> 
+<body onscroll="setdiffrentmenunav()"> 

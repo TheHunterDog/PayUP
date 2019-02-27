@@ -14,22 +14,23 @@ include('layout/navigation-top.php')
 <?php
 include('layout/navigation-middle.php');
 ?>
+<div class=""></div>
 <div class="sections-index">
-<div class="article-sections-index">
-    <h3>Why us</h3>
-    <p>Why us ?, we arent talented people we arent intressted in money and neither your data we just wanted to make something we and others can use</p>
-</div>
-<div class="article-sections-index">
-    <h3>about us</h3>
-    <p>well actually about me, there issn't a team just me</p>
-</div>
-<div class="article-sections-index">
-    <h3>contact</h3>
-    <p>well how about a no ?</p>
-</div>
+    <div class="article-sections-index">
+        <h3>Why us</h3>
+        <p>Why us ?, we arent talented people we arent intressted in money and neither your data we just wanted to make something we and others can use</p>
+    </div>
+    <div class="article-sections-index">
+        <h3>about us</h3>
+        <p>well actually about me, there issn't a team just me</p>
+    </div>
+    <div class="article-sections-index">
+        <h3>contact</h3>
+        <p>well how about a no ?</p>
+    </div>
 
 
 </div>
 <?php
 include('layout/footer.php');
-?>
+?> 

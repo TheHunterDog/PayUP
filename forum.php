@@ -16,7 +16,7 @@ if (isset($_SESSION['info'])) {
         echo ($_POST['comment']);
         echo ($_POST['submit_comment']);
         $forum->PostComment($_SESSION['info'][0]['Username'], $_POST['comment'], $conn, $_POST['submit_comment']);
-        print_r($_POST);
+        // print_r($_POST);
     }
 } else {
     header('location:index.php');
@@ -41,4 +41,4 @@ include('layout/navigation.php');
 </div>
 <?php
 include('layout/footer.php')
-    ? > 
+?> 

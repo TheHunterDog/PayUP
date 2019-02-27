@@ -9,8 +9,8 @@ class forum
         for ($p = 0; $p < count($forum); $p++) {
             if ($forum[$p]['BindToPostID'] == null) {
 
-            
-            // if ($forum[$p]['BindToPostID'] == null) {
+
+                // if ($forum[$p]['BindToPostID'] == null) {
                 echo ('<div class="Forum-Article" id=' . $forum[$p]['ID'] . '>');
                 echo ('<p>' . htmlspecialchars($forum[$p]['who']) . ' said </br>' . htmlspecialchars($forum[$p]['what']) . '</br>' . 'on the time of ' . htmlspecialchars($forum[$p]['time']) . '</p>');
                 echo ('<div class="comments" id=' . 'Forum-Article_' . $forum[$p]['ID'] . '>');
@@ -21,10 +21,10 @@ class forum
             </form>
 ');
                 for ($f = 0; $f < count($forum); $f++)
-                    for ($q = 0; $q < count($forum); $q++) {
+                for ($q = 0; $q < count($forum); $q++) {
                     if ($forum[$q]['BindToPostID'] == $forum[$f]['ID']) {
                         // if (!is_null($forum[$q]['BindToPostID'])) {
-                // echo ('<script>document.getElementById(" Forum - Article_ "' . $forum[$p]['BindToPostID'] . ').innerHTML =' . htmlspecialchars($forum[$p][' who ']) . ' said </br> ' . htmlspecialchars($forum[$p][' what ']) . ' </br> ' . ' on the time of ' . htmlspecialchars($forum[$p][' time ']) . ' </p>  </script> ');
+                        // echo ('<script>document.getElementById(" Forum - Article_ "' . $forum[$p]['BindToPostID'] . ').innerHTML =' . htmlspecialchars($forum[$p][' who ']) . ' said </br> ' . htmlspecialchars($forum[$p][' what ']) . ' </br> ' . ' on the time of ' . htmlspecialchars($forum[$p][' time ']) . ' </p>  </script> ');
                         echo ('<p>' . htmlspecialchars($forum[$q]['who']) . ' said </br>' . htmlspecialchars($forum[$q]['what']) . '</br>' . 'on the time of ' . htmlspecialchars($forum[$q]['time']) . '</p>');
                         echo ('            <form action="forum.php" method="POST">
                 <input type="text" name="comment" placeholder="Comment">
@@ -38,11 +38,10 @@ class forum
                 // }
                 echo ('</div>');
                 echo ('</div>');
-
             }
         }
     }
-        // }
+    // }
 
     function PostForum($username, $message, $DATABASECONN)
     {
@@ -62,8 +61,5 @@ class forum
 
         $stmt->execute();
     }
-
 }
-
-
-?>
+ 

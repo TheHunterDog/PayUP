@@ -3,7 +3,7 @@ class menu
 {
     function ShowMenuTop()
     {
-        echo ('<div class="nav-top">');
+        echo ('<div class="nav-top" id="nav-top">');
         if (isset($_SESSION['info'])) {
             echo ('<a href="dashboard.php">');
             echo ('<p>Dashboard</p>');
@@ -14,13 +14,11 @@ class menu
             echo ('<a href="logout.php">');
             echo ('<p>logout</p>');
             echo ('</a>');
-
-
         } else {
-            echo ('<a class="signup" href="signup.php">');
+            echo ('<a id="signup" class="signup" href="signup.php">');
             echo ('<p>Sign Up</p>');
             echo ('</a>');
-            echo ('<a class="login" href="login.php">');
+            echo ('<a id="login" class="login" href="login.php">');
             echo ('<p>Login</p>');
             echo ('</a>');
         }
@@ -41,8 +39,6 @@ class menu
             echo ('<a href="logout.php">');
             echo ('<p>logout</p>');
             echo ('</a>');
-
-
         } else {
             echo ('<a class="signup" href="signup.php">');
             echo ('<p>Sign Up</p>');
@@ -76,8 +72,6 @@ class menu
             echo ('<a href="logout.php">');
             echo ('<p>logout</p>');
             echo ('</a>');
-
-
         } else {
             echo ('<a class="signup" href="signup.php">');
             echo ('<p>Sign Up</p>');
@@ -87,7 +81,5 @@ class menu
             echo ('</a>');
         }
     }
-
 }
-
-?>
+ 
