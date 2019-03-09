@@ -7,7 +7,7 @@
     <div class="footer-menu">
         <?php
         if (!isset($Menu)) {
-            include('lib/Menu.php');
+            include('Lib/Menu.php');
             $Menu = new menu();
         }
         $Menu->ShowMenuFooter();

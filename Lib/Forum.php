@@ -6,6 +6,7 @@ class forum
         $stmt = $DATABASECONN->prepare("SELECT * FROM Forum");
         $stmt->execute();
         $forum = $stmt->fetchAll();
+        $p = 0;
         for ($p = 0; $p < count($forum); $p++) {
             if ($forum[$p]['BindToPostID'] == null) {
 
@@ -20,27 +21,31 @@ class forum
                 <input type="submit" value="' . $forum[$p]['ID'] . '" name="submit_comment">
             </form>
 ');
-                for ($f = 0; $f < count($forum); $f++)
-                for ($q = 0; $q < count($forum); $q++) {
-                    if ($forum[$q]['BindToPostID'] == $forum[$f]['ID']) {
-                        // if (!is_null($forum[$q]['BindToPostID'])) {
-                        // echo ('<script>document.getElementById(" Forum - Article_ "' . $forum[$p]['BindToPostID'] . ').innerHTML =' . htmlspecialchars($forum[$p][' who ']) . ' said </br> ' . htmlspecialchars($forum[$p][' what ']) . ' </br> ' . ' on the time of ' . htmlspecialchars($forum[$p][' time ']) . ' </p>  </script> ');
-                        echo ('<p>' . htmlspecialchars($forum[$q]['who']) . ' said </br>' . htmlspecialchars($forum[$q]['what']) . '</br>' . 'on the time of ' . htmlspecialchars($forum[$q]['time']) . '</p>');
-                        echo ('            <form action="forum.php" method="POST">
+            }
+            for ($f = 0; $f < count($forum); $f++) {
+                // for ($q = 0; $q < count($forum); $q++) {
+                if ($forum[$p]['BindToPostID'] == $forum[$f]['ID']) {
+                    // if (!is_null($forum[$q]['BindToPostID'])) {
+                    // echo ('<script>document.getElementById(" Forum - Article_ "' . $forum[$p]['BindToPostID'] . ').innerHTML =' . htmlspecialchars($forum[$p][' who ']) . ' said </br> ' . htmlspecialchars($forum[$p][' what ']) . ' </br> ' . ' on the time of ' . htmlspecialchars($forum[$p][' time ']) . ' </p>  </script> ');
+                    echo ('<p>' . htmlspecialchars($forum[$f]['who']) . ' said </br>' . htmlspecialchars($forum[$f]['what']) . '</br>' . 'on the time of ' . htmlspecialchars($forum[$f]['time']) . '</p>');
+                    echo ('            <form action="forum.php" method="POST">
                 <input type="text" name="comment" placeholder="Comment">
-                <input type="submit" value="' . $forum[$q]['ID'] . '" name="submit_comment">
+                <input type="submit" value="' . $forum[$f]['ID'] . '" name="submit_comment">
             </form>
 
 ');
-                    }
+                    // }
                 }
 
                 // }
-                echo ('</div>');
-                echo ('</div>');
             }
+            // }
+            echo ('</div>');
+            echo ('</div>');
         }
     }
+
+
     // }
 
     function PostForum($username, $message, $DATABASECONN)
@@ -62,4 +67,3 @@ class forum
         $stmt->execute();
     }
 }
- 

@@ -2,6 +2,9 @@
 if (!isset($_SESSION)) {
     session_start();
 }
+ini_set('display_errors', 1);
+ini_set('display_startp_errors', 1);
+error_reporting(-1);
 include('Lib/Db.php');
 include('Lib/Forum.php');
 $Db = new Db();
@@ -24,7 +27,7 @@ if (isset($_SESSION['info'])) {
 include('layout/header.php');
 
 
-include('layout/navigation.php');
+include('layout/navigation-middle.php');
 ?>
 
 
